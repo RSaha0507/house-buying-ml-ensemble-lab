@@ -37,9 +37,11 @@ Why:
 ### Neural Networks (MLPClassifier)
 
 Core form (layer-wise):
+
 $$
 h^{(l+1)} = \sigma(W^{(l)}h^{(l)} + b^{(l)})
 $$
+
 $$
 \hat{y} = \text{softmax}(W^{(L)}h^{(L)} + b^{(L)})
 $$
