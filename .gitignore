@@ -1,0 +1,12 @@
+# Python cache
+__pycache__/
+*.py[cod]
+
+# Jupyter checkpoints
+.ipynb_checkpoints/
+results/.ipynb_checkpoints/
+results/figures/.ipynb_checkpoints/
+
+# Local env files
+.env
+.venv/
