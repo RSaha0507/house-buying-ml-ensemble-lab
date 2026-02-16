@@ -8,9 +8,11 @@
 
 Goal:
 - Learn a function
+  
 $$
   \( f(x) \to \{0,1,2\} \)
 $$
+
    that predicts buying feasibility.
 
 ## 2) Preprocessing
