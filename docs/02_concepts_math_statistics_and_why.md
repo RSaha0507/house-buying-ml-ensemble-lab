@@ -14,10 +14,11 @@ Goal:
 ### Standardization (numeric features)
 
 For each numeric feature:
+$$
 \[
 z = \frac{x - \mu}{\sigma}
 \]
-
+$$
 Why:
 - Puts features on comparable scale.
 - Stabilizes gradient-based training (MLPs).
