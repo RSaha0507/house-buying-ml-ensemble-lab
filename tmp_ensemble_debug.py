@@ -87,9 +87,10 @@ class KMedoidsLabelModel:
 
 # ---- data ----
 base = Path(r"C:\Users\91960\house_pricing_nn")
-train_df = pd.read_csv(base / 'house_buy_train.csv')
-cv_df = pd.read_csv(base / 'house_buy_cv.csv')
-test_df = pd.read_csv(base / 'house_buy_test.csv')
+csv_dir = base / "csv"
+train_df = pd.read_csv(csv_dir / 'house_buy_train.csv')
+cv_df = pd.read_csv(csv_dir / 'house_buy_cv.csv')
+test_df = pd.read_csv(csv_dir / 'house_buy_test.csv')
 
 feature_cols = [
     'buyer_income_lpa','house_price_lakh','loan_eligibility','credit_score',

@@ -212,14 +212,15 @@ def archive_figures(figs_dir, results_dir, tag):
 def main():
     args = parse_args()
     base_dir = Path(args.base_dir).resolve()
+    csv_dir = base_dir / 'csv'
     results_dir = base_dir / 'results'
     figs_dir = results_dir / 'figures'
     results_dir.mkdir(exist_ok=True)
     figs_dir.mkdir(exist_ok=True)
 
-    train_df = pd.read_csv(base_dir / 'house_buy_train.csv')
-    cv_df = pd.read_csv(base_dir / 'house_buy_cv.csv')
-    test_df = pd.read_csv(base_dir / 'house_buy_test.csv')
+    train_df = pd.read_csv(csv_dir / 'house_buy_train.csv')
+    cv_df = pd.read_csv(csv_dir / 'house_buy_cv.csv')
+    test_df = pd.read_csv(csv_dir / 'house_buy_test.csv')
 
     feature_cols = [
         'buyer_income_lpa', 'house_price_lakh', 'loan_eligibility', 'credit_score',

@@ -343,7 +343,7 @@ def generate_dataset(out_dir: Path, train_size: int, cv_size: int, test_size: in
 
 def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(description="Generate synthetic house-buying dataset.")
-    parser.add_argument("--out-dir", default=r"C:\Users\91960\house_pricing_nn")
+    parser.add_argument("--out-dir", default=r"C:\Users\91960\house_pricing_nn\csv")
     parser.add_argument("--train-size", type=int, default=3000)
     parser.add_argument("--cv-size", type=int, default=400)
     parser.add_argument("--test-size", type=int, default=300)

@@ -78,7 +78,7 @@ Objective:
 
 Steps:
 1. Ran structured trials and stored outputs:
-   - `optimization_trials_round4_2026-02-16.csv`
+   - `csv/optimization_trials_round4_2026-02-16.csv`
    - `optimization_trials_round4_2026-02-16.md`
 2. Tested seed sensitivity for tuned `nn_medium`.
 3. Tested stacking and alternate ensemble family combinations.
@@ -92,7 +92,7 @@ Outcome:
 1. Central report with appended snapshots:
    - `results/experiment_results_log.md`
 2. Per-run metrics snapshots:
-   - `results/metrics_snapshot_*.csv`
+   - `csv/metrics_snapshot_*.csv`
 3. Persistent visual history archive by tag:
    - `results/history/<tag>/figures`
 4. Auto-archive support added to:

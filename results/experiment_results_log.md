@@ -9,24 +9,24 @@
 
 ### Documentation
 
-- Round-by-round objectives and execution: `results/docs/01_roundwise_objectives_and_step_by_step.md`
-- Concepts and math/statistics rationale: `results/docs/02_concepts_math_statistics_and_why.md`
-- Future roadmap and expected impact: `results/docs/03_future_steps_and_expected_impact.md`
+- Round-by-round objectives and execution: `docs/01_roundwise_objectives_and_step_by_step.md`
+- Concepts and math/statistics rationale: `docs/02_concepts_math_statistics_and_why.md`
+- Future roadmap and expected impact: `docs/03_future_steps_and_expected_impact.md`
 
 ### Core artifacts
 
 - Main experiment log: `results/experiment_results_log.md`
-- Executed notebook: `house_buying_nn_experiment.executed.ipynb`
-- Latest promoted metrics snapshot: `results/metrics_snapshot_2026-02-16_16-22-56.csv`
-- Round-4 optimization trials: `results/optimization_trials_round4_2026-02-16.csv`
+- Executed notebook: `notebooks/house_buying_nn_experiment.executed.ipynb`
+- Latest promoted metrics snapshot: `csv/metrics_snapshot_2026-02-16_16-22-56.csv`
+- Round-4 optimization trials: `csv/optimization_trials_round4_2026-02-16.csv`
 - Round-4 optimization note: `results/optimization_trials_round4_2026-02-16.md`
 
 ### Snapshot flagpoints
 
-- Dataset scale upgrade checkpoint: `results/metrics_snapshot_2026-02-16_15-43-58.csv` and visuals in `results/history/dataset_scale_3000_400_300/figures`
-- Adaptive ensemble checkpoint: `results/metrics_snapshot_2026-02-16_15-58-07.csv` and visuals in `results/history/opt_round1_adaptive_ensemble/figures`
-- Seed-averaged NN checkpoint: `results/metrics_snapshot_2026-02-16_16-17-53.csv` and visuals in `results/history/opt_round2_seedbag_nnsmall/figures`
-- Promoted tuned profile checkpoint: `results/metrics_snapshot_2026-02-16_16-22-56.csv` and visuals in `results/history/opt_round3_medium_tuned/figures`
+- Dataset scale upgrade checkpoint: `csv/metrics_snapshot_2026-02-16_15-43-58.csv` and visuals in `results/history/dataset_scale_3000_400_300/figures`
+- Adaptive ensemble checkpoint: `csv/metrics_snapshot_2026-02-16_15-58-07.csv` and visuals in `results/history/opt_round1_adaptive_ensemble/figures`
+- Seed-averaged NN checkpoint: `csv/metrics_snapshot_2026-02-16_16-17-53.csv` and visuals in `results/history/opt_round2_seedbag_nnsmall/figures`
+- Promoted tuned profile checkpoint: `csv/metrics_snapshot_2026-02-16_16-22-56.csv` and visuals in `results/history/opt_round3_medium_tuned/figures`
 - Round-4 exploration visuals: `results/history/opt_round4_exploration/figures`
 
 
@@ -101,9 +101,9 @@
 
 ## Artifacts
 
-- Notebook: `house_buying_nn_experiment.ipynb`
-- Executed notebook: `house_buying_nn_experiment.executed.ipynb`
-- Metrics snapshot CSV: `results/metrics_snapshot_2026-02-16.csv`
+- Notebook: `notebooks/house_buying_nn_experiment.ipynb`
+- Executed notebook: `notebooks/house_buying_nn_experiment.executed.ipynb`
+- Metrics snapshot CSV: `csv/metrics_snapshot_2026-02-16.csv`
 
 ## Visualization artifacts
 
@@ -137,7 +137,7 @@
 
 - Dataset split sizes: train=3000, cv=400, test=300
 - Train class distribution: {'no': 1000, 'yes': 1000, 'neutral': 1000}
-- Metrics CSV: `results/metrics_snapshot_2026-02-16_15-43-58.csv`
+- Metrics CSV: `csv/metrics_snapshot_2026-02-16_15-43-58.csv`
 - Figures:
   - `results/figures/accuracy_by_model_split.png`
   - `results/figures/f1_by_model_split.png`
@@ -202,7 +202,7 @@
 - Dataset split sizes: train=3000, cv=400, test=300
 - Train class distribution: {'no': 1000, 'yes': 1000, 'neutral': 1000}
 - Ensemble setup: bootstrap=14, selected_families=['nn_deep', 'nn_medium'], cv_threshold=0.78, weight=cv_f1^2, kept_learners=28
-- Metrics CSV: `results/metrics_snapshot_2026-02-16_15-58-07.csv`
+- Metrics CSV: `csv/metrics_snapshot_2026-02-16_15-58-07.csv`
 - Figures:
   - `results/figures/accuracy_by_model_split.png`
   - `results/figures/f1_by_model_split.png`
@@ -267,7 +267,7 @@
 - Dataset split sizes: train=3000, cv=400, test=300
 - Train class distribution: {'no': 1000, 'yes': 1000, 'neutral': 1000}
 - Ensemble setup: bootstrap=14, selected_families=['nn_deep', 'nn_medium'], cv_threshold=0.78, weight=cv_f1^2, kept_learners=28
-- Metrics CSV: `results/metrics_snapshot_2026-02-16_16-17-53.csv`
+- Metrics CSV: `csv/metrics_snapshot_2026-02-16_16-17-53.csv`
 - Figures:
   - `results/figures/accuracy_by_model_split.png`
   - `results/figures/f1_by_model_split.png`
@@ -334,7 +334,7 @@
 - Dataset split sizes: train=3000, cv=400, test=300
 - Train class distribution: {'no': 1000, 'yes': 1000, 'neutral': 1000}
 - Ensemble setup: bootstrap=14, selected_families=['nn_medium', 'nn_deep'], cv_threshold=0.78, weight=cv_f1^2, kept_learners=28
-- Metrics CSV: `results/metrics_snapshot_2026-02-16_16-22-56.csv`
+- Metrics CSV: `csv/metrics_snapshot_2026-02-16_16-22-56.csv`
 - Figures:
   - `results/figures/accuracy_by_model_split.png`
   - `results/figures/f1_by_model_split.png`
@@ -408,7 +408,7 @@
 
 ## Round 4 exploration log
 
-- Trial summary CSV: `results/optimization_trials_round4_2026-02-16.csv`
+- Trial summary CSV: `csv/optimization_trials_round4_2026-02-16.csv`
 - Trial summary note: `results/optimization_trials_round4_2026-02-16.md`
 - Outcome: tested seed sensitivity, stacking, and ensemble variants.
 - Best test-only candidate: `nn_medium_rs=59` (test macro-F1 0.8845), but CV macro-F1 dropped to 0.8540.

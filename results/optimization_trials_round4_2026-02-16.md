@@ -1,6 +1,6 @@
 # Round 4 Optimization Trials
 
-- File: `optimization_trials_round4_2026-02-16.csv`
+- File: `csv/optimization_trials_round4_2026-02-16.csv`
 - Families used for stacking: ['nn_medium', 'nn_deep', 'nn_small', 'knn']
 
 ## round4_ensemble_variants

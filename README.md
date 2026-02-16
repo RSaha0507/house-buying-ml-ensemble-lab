@@ -5,7 +5,7 @@ A multi-class machine learning project to classify whether a buyer can purchase 
 ## What's included
 
 - Dataset generator with controlled variation and split sizing (`generate_house_dataset.py`)
-- Jupyter experiment notebook (`house_buying_nn_experiment.ipynb`)
+- Jupyter experiment notebook (`notebooks/house_buying_nn_experiment.ipynb`)
 - Model comparison across:
   - Neural networks
   - KNN
@@ -15,8 +15,12 @@ A multi-class machine learning project to classify whether a buyer can purchase 
 - Experiment logging and reporting utilities:
   - `record_experiment_results.py`
   - `export_results_visuals.py`
-- Full results snapshots, visual history, and docs in `results/`
+- Organized artifacts:
+  - datasets and metrics CSVs in `csv/`
+  - notebooks in `notebooks/`
+  - explanatory docs in `docs/`
+  - logs and visual history in `results/`
 
 ## Current promoted profile
 
-See `results/experiment_results_log.md` and `results/docs/` for round-wise objectives, math/statistics reasoning, and future roadmap.
+See `results/experiment_results_log.md` and `docs/` for round-wise objectives, math/statistics reasoning, and future roadmap.

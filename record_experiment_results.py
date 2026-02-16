@@ -249,12 +249,14 @@ def parse_args() -> argparse.Namespace:
 def main():
     args = parse_args()
     base_dir = Path(args.base_dir)
+    csv_dir = base_dir / "csv"
     results_dir = base_dir / "results"
+    csv_dir.mkdir(parents=True, exist_ok=True)
     results_dir.mkdir(parents=True, exist_ok=True)
 
-    train_df = pd.read_csv(base_dir / "house_buy_train.csv")
-    cv_df = pd.read_csv(base_dir / "house_buy_cv.csv")
-    test_df = pd.read_csv(base_dir / "house_buy_test.csv")
+    train_df = pd.read_csv(csv_dir / "house_buy_train.csv")
+    cv_df = pd.read_csv(csv_dir / "house_buy_cv.csv")
+    test_df = pd.read_csv(csv_dir / "house_buy_test.csv")
 
     feature_cols = [
         "buyer_income_lpa",
@@ -404,7 +406,7 @@ def main():
 
     timestamp = datetime.now()
     stamp = timestamp.strftime("%Y-%m-%d_%H-%M-%S")
-    csv_path = results_dir / f"metrics_snapshot_{stamp}.csv"
+    csv_path = csv_dir / f"metrics_snapshot_{stamp}.csv"
     metrics_df.to_csv(csv_path, index=False)
 
     sorted_main = metrics_df.sort_values(["split", "f1_macro"], ascending=[True, False]).reset_index(drop=True)
@@ -428,7 +430,7 @@ def main():
         f"- Ensemble setup: bootstrap={n_bootstrap}, selected_families={selected_families}, "
         f"cv_threshold={ensemble_cv_threshold}, weight=cv_f1^2, kept_learners={kept_learners}\n"
     )
-    report += f"- Metrics CSV: `results/{csv_path.name}`\n"
+    report += f"- Metrics CSV: `csv/{csv_path.name}`\n"
     report += "- Figures:\n"
     report += "  - `results/figures/accuracy_by_model_split.png`\n"
     report += "  - `results/figures/f1_by_model_split.png`\n"
