@@ -20,10 +20,10 @@ Outcome:
 - Established the base modeling/evaluation framework.
 - Detected overfitting risk from train vs CV/test gaps.
 
-## Round 1 - Add model diversity + bootstrap ensemble
+## Round 1 - Addition of model diversity + bootstrap ensemble
 
 Objective:
-- Improve generalization by adding model diversity and ensemble learning.
+- Improving generalization by adding model diversity and ensemble learning.
 
 Steps:
 1. Added non-NN models: KNN, KMeans++, K-Medoids.
@@ -37,7 +37,7 @@ Outcome:
 ## Round 2 - Dataset scaling and variance increase
 
 Objective:
-- Increase data scale and feature-space variation so models learn broader patterns.
+- To increase data scale and feature-space variation so models learn broader patterns.
 
 Steps:
 1. Rebuilt generator with richer scenario-driven sampling and more variance.
@@ -74,7 +74,7 @@ Key promoted numbers (from `metrics_snapshot_2026-02-16_16-22-56.csv`):
 ## Round 4 - Exploratory optimization (not promoted)
 
 Objective:
-- Probe whether further gains are possible via seed sensitivity, stacking, and extra ensemble variants.
+- To probe whether further gains are possible via seed sensitivity, stacking, and extra ensemble variants.
 
 Steps:
 1. Ran structured trials and stored outputs:
