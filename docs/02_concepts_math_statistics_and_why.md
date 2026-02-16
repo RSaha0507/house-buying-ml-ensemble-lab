@@ -120,10 +120,7 @@ For each class \(k\):
 
 $$
 Precision_k = \frac{TP_k}{TP_k + FP_k}, \quad
-Recall_k = \frac{TP_k}{TP_k + FN_k}
-$$
-
-$$
+Recall_k = \frac{TP_k}{TP_k + FN_k}, \quad
 F1_k = \frac{2 \cdot Precision_k \cdot Recall_k}{Precision_k + Recall_k}
 $$
 
