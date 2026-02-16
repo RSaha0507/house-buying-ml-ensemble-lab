@@ -82,6 +82,7 @@ Bootstrap:
 - Sample with replacement from training data to create multiple training replicas.
 
 Bagging prediction (soft voting):
+
 $$
 \hat{p}(y=c \mid x) = \frac{1}{\sum w_m}\sum_m w_m p_m(y=c \mid x)
 $$
@@ -95,6 +96,7 @@ Why:
 Used:
 - CV quality gate (only keep learners with CV macro-F1 above threshold).
 - Weight by squared CV macro-F1:
+  
 $$
 w_m = \max(\text{F1}_{cv,m}^2,\ \epsilon)
 $$
@@ -107,6 +109,7 @@ Why:
 ## 6) Metrics used and mathematical meaning
 
 ### Accuracy
+
 $$
 \text{Accuracy} = \frac{\text{correct predictions}}{\text{total predictions}}
 $$
@@ -114,15 +117,18 @@ $$
 ### Precision, Recall, F1 (macro)
 
 For each class \(k\):
+
 $$
 Precision_k = \frac{TP_k}{TP_k + FP_k}, \quad
 Recall_k = \frac{TP_k}{TP_k + FN_k}
 $$
+
 $$
 F1_k = \frac{2 \cdot Precision_k \cdot Recall_k}{Precision_k + Recall_k}
 $$
 
 Macro-F1:
+
 $$
 F1_{macro} = \frac{1}{K}\sum_{k=1}^{K}F1_k
 $$
@@ -132,6 +138,7 @@ Why macro:
 - Better for multi-class balance than plain accuracy.
 
 ### Balanced Accuracy
+
 $$
 \text{Balanced Accuracy} = \frac{1}{K}\sum_{k=1}^{K} Recall_k
 $$
@@ -142,6 +149,7 @@ Why:
 ### Log Loss
 
 Penalizes miscalibrated probabilities:
+
 $$
 \text{LogLoss} = -\frac{1}{N}\sum_{i=1}^{N}\sum_{k=1}^{K}\mathbb{1}(y_i=k)\log p_{ik}
 $$
