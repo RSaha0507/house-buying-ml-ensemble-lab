@@ -414,3 +414,68 @@
 - Best test-only candidate: `nn_medium_rs=59` (test macro-F1 0.8845), but CV macro-F1 dropped to 0.8540.
 - Promoted profile remains `opt_round3_medium_tuned` for better CV/test balance.
 
+## Snapshot: 2026-02-17 14:19:13 (split_notebook_runs_2026-02-17)
+
+- Scope: split notebook experiment recording (5 model-specific notebooks)
+- Dataset split sizes: train=3000, cv=400, test=300
+- Train class distribution: {'no': 1000, 'yes': 1000, 'neutral': 1000}
+- Notebooks:
+  - `notebooks/house_buying_knn_experiment.ipynb`
+  - `notebooks/house_buying_kmedoids_experiment.ipynb`
+  - `notebooks/house_buying_kmeanspp_experiment.ipynb`
+  - `notebooks/house_buying_bootstrap_ensemble_experiment.ipynb`
+  - `notebooks/house_buying_three_nns_experiment.ipynb`
+- Bootstrap ensemble setup: bootstrap=14, selected_families=['nn_medium', 'nn_deep'], cv_threshold=0.78, weight=cv_f1^2, kept_learners=28
+- Metrics CSV: `csv/metrics_snapshot_split_notebooks_2026-02-17_14-19-13.csv`
+
+### Accuracy and Macro-F1
+
+| notebook | model | split | accuracy | f1_macro |
+| --- | --- | --- | --- | --- |
+| notebooks/house_buying_three_nns_experiment.ipynb | nn_medium | cv | 0.8675 | 0.8687 |
+| notebooks/house_buying_three_nns_experiment.ipynb | nn_deep | cv | 0.8650 | 0.8663 |
+| notebooks/house_buying_bootstrap_ensemble_experiment.ipynb | bootstrap_ensemble | cv | 0.8575 | 0.8592 |
+| notebooks/house_buying_three_nns_experiment.ipynb | nn_small | cv | 0.8500 | 0.8524 |
+| notebooks/house_buying_knn_experiment.ipynb | knn | cv | 0.7750 | 0.7779 |
+| notebooks/house_buying_kmeanspp_experiment.ipynb | kmeanspp | cv | 0.5775 | 0.5749 |
+| notebooks/house_buying_kmedoids_experiment.ipynb | kmedoids | cv | 0.5850 | 0.5692 |
+| notebooks/house_buying_three_nns_experiment.ipynb | nn_medium | test | 0.8767 | 0.8779 |
+| notebooks/house_buying_bootstrap_ensemble_experiment.ipynb | bootstrap_ensemble | test | 0.8733 | 0.8744 |
+| notebooks/house_buying_three_nns_experiment.ipynb | nn_small | test | 0.8667 | 0.8679 |
+| notebooks/house_buying_three_nns_experiment.ipynb | nn_deep | test | 0.8467 | 0.8484 |
+| notebooks/house_buying_knn_experiment.ipynb | knn | test | 0.7867 | 0.7886 |
+| notebooks/house_buying_kmeanspp_experiment.ipynb | kmeanspp | test | 0.6267 | 0.6220 |
+| notebooks/house_buying_kmedoids_experiment.ipynb | kmedoids | test | 0.6333 | 0.6215 |
+| notebooks/house_buying_knn_experiment.ipynb | knn | train | 1.0000 | 1.0000 |
+| notebooks/house_buying_bootstrap_ensemble_experiment.ipynb | bootstrap_ensemble | train | 0.9143 | 0.9151 |
+| notebooks/house_buying_three_nns_experiment.ipynb | nn_deep | train | 0.8983 | 0.8992 |
+| notebooks/house_buying_three_nns_experiment.ipynb | nn_medium | train | 0.8873 | 0.8882 |
+| notebooks/house_buying_three_nns_experiment.ipynb | nn_small | train | 0.8770 | 0.8783 |
+| notebooks/house_buying_kmeanspp_experiment.ipynb | kmeanspp | train | 0.6050 | 0.6005 |
+| notebooks/house_buying_kmedoids_experiment.ipynb | kmedoids | train | 0.5953 | 0.5835 |
+
+### Full metric table
+
+| run_group | notebook | model | split | accuracy | precision_macro | recall_macro | f1_macro | balanced_accuracy | log_loss | roc_auc_macro_ovr |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| split_notebooks_single | notebooks/house_buying_three_nns_experiment.ipynb | nn_medium | cv | 0.8675 | 0.8718 | 0.8675 | 0.8687 | 0.8675 | 0.3206 | 0.9662 |
+| split_notebooks_single | notebooks/house_buying_three_nns_experiment.ipynb | nn_deep | cv | 0.8650 | 0.8693 | 0.8649 | 0.8663 | 0.8649 | 0.3187 | 0.9673 |
+| split_notebooks_ensemble | notebooks/house_buying_bootstrap_ensemble_experiment.ipynb | bootstrap_ensemble | cv | 0.8575 | 0.8636 | 0.8575 | 0.8592 | 0.8575 | 0.3120 | 0.9679 |
+| split_notebooks_single | notebooks/house_buying_three_nns_experiment.ipynb | nn_small | cv | 0.8500 | 0.8594 | 0.8500 | 0.8524 | 0.8500 | 0.3221 | 0.9650 |
+| split_notebooks_single | notebooks/house_buying_knn_experiment.ipynb | knn | cv | 0.7750 | 0.7854 | 0.7750 | 0.7779 | 0.7750 | 0.7456 | 0.9166 |
+| split_notebooks_single | notebooks/house_buying_kmeanspp_experiment.ipynb | kmeanspp | cv | 0.5775 | 0.5946 | 0.5777 | 0.5749 | 0.5777 | 0.8686 | 0.7626 |
+| split_notebooks_single | notebooks/house_buying_kmedoids_experiment.ipynb | kmedoids | cv | 0.5850 | 0.5650 | 0.5848 | 0.5692 | 0.5848 | 0.8270 | 0.7764 |
+| split_notebooks_single | notebooks/house_buying_three_nns_experiment.ipynb | nn_medium | test | 0.8767 | 0.8808 | 0.8767 | 0.8779 | 0.8767 | 0.2999 | 0.9689 |
+| split_notebooks_ensemble | notebooks/house_buying_bootstrap_ensemble_experiment.ipynb | bootstrap_ensemble | test | 0.8733 | 0.8773 | 0.8733 | 0.8744 | 0.8733 | 0.2820 | 0.9725 |
+| split_notebooks_single | notebooks/house_buying_three_nns_experiment.ipynb | nn_small | test | 0.8667 | 0.8705 | 0.8667 | 0.8679 | 0.8667 | 0.3035 | 0.9695 |
+| split_notebooks_single | notebooks/house_buying_three_nns_experiment.ipynb | nn_deep | test | 0.8467 | 0.8524 | 0.8467 | 0.8484 | 0.8467 | 0.3195 | 0.9650 |
+| split_notebooks_single | notebooks/house_buying_knn_experiment.ipynb | knn | test | 0.7867 | 0.7926 | 0.7867 | 0.7886 | 0.7867 | 0.8252 | 0.9178 |
+| split_notebooks_single | notebooks/house_buying_kmeanspp_experiment.ipynb | kmeanspp | test | 0.6267 | 0.6248 | 0.6267 | 0.6220 | 0.6267 | 0.8181 | 0.7895 |
+| split_notebooks_single | notebooks/house_buying_kmedoids_experiment.ipynb | kmedoids | test | 0.6333 | 0.6199 | 0.6333 | 0.6215 | 0.6333 | 0.8009 | 0.7963 |
+| split_notebooks_single | notebooks/house_buying_knn_experiment.ipynb | knn | train | 1.0000 | 1.0000 | 1.0000 | 1.0000 | 1.0000 | 0.0000 | 1.0000 |
+| split_notebooks_ensemble | notebooks/house_buying_bootstrap_ensemble_experiment.ipynb | bootstrap_ensemble | train | 0.9143 | 0.9174 | 0.9143 | 0.9151 | 0.9143 | 0.2044 | 0.9878 |
+| split_notebooks_single | notebooks/house_buying_three_nns_experiment.ipynb | nn_deep | train | 0.8983 | 0.9011 | 0.8983 | 0.8992 | 0.8983 | 0.2534 | 0.9781 |
+| split_notebooks_single | notebooks/house_buying_three_nns_experiment.ipynb | nn_medium | train | 0.8873 | 0.8901 | 0.8873 | 0.8882 | 0.8873 | 0.2680 | 0.9753 |
+| split_notebooks_single | notebooks/house_buying_three_nns_experiment.ipynb | nn_small | train | 0.8770 | 0.8816 | 0.8770 | 0.8783 | 0.8770 | 0.2925 | 0.9718 |
+| split_notebooks_single | notebooks/house_buying_kmeanspp_experiment.ipynb | kmeanspp | train | 0.6050 | 0.6081 | 0.6050 | 0.6005 | 0.6050 | 0.8295 | 0.7814 |
+| split_notebooks_single | notebooks/house_buying_kmedoids_experiment.ipynb | kmedoids | train | 0.5953 | 0.5826 | 0.5953 | 0.5835 | 0.5953 | 0.8572 | 0.7650 |
